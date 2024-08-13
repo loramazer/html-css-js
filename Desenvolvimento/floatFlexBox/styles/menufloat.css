@@ -1,0 +1,77 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Estilos do cabeçalho */
+.header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Contêiner geral */
+.container {
+    width: 100%;
+    overflow: auto;
+    /* Clearfix */
+}
+
+/* Menu Lateral */
+.sidebar {
+    float: left;
+    /* Menu flutuando à esquerda */
+    width: 20%;
+    /* Largura do menu */
+    background-color: #555;
+    color: #fff;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.sidebar .menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .menu li {
+    margin-bottom: 10px;
+}
+
+.sidebar .menu li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    background-color: #666;
+    border-radius: 5px;
+}
+
+.sidebar .menu li a:hover {
+    background-color: #777;
+}
+
+/* Conteúdo Principal */
+.main-content {
+    float: left;
+    /* Conteúdo flutuando à esquerda após o menu */
+    width: 75%;
+    /* Largura do conteúdo */
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+/* Estilos do rodapé */
+.footer {
+    clear: both;
+    /* Garantir que o rodapé fique abaixo dos flutuantes */
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}

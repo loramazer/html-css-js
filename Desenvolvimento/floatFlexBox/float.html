@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatinhos Fofos</title>
+    <link rel="stylesheet" href="styles/float.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Bem-vindo ao Mundo dos Gatinhos</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#curiosidades">Curiosidades</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="main-content">
+        <section id="sobre" class="section">
+            <h2>Sobre Gatinhos</h2>
+            <p>Os gatinhos são animais adoráveis que trazem alegria e companhia para muitas pessoas ao redor do mundo. Eles são conhecidos por sua independência, mas também por seu carinho quando se sentem seguros e amados.</p>
+        </section>
+        
+        <section id="galeria" class="section">
+            <h2>Galeria de Fotos</h2>
+            <div class="gallery">
+                <img src="imagens/gatinho1.webp" alt="Gatinho fofo 1" class="gallery-image">
+                <img src="imagens/gatinho2.webp" alt="Gatinho fofo 2" class="gallery-image">
+                <img src="imagens/gatinho3.jpg" alt="Gatinho fofo 3" class="gallery-image">
+            </div>
+        </section>
+        
+        <section id="curiosidades" class="section">
+            <h2>Curiosidades sobre Gatinhos</h2>
+            <div class="float-container">
+                <img src="imagens/gatinho3.webp" alt="Gatinho curiosidade 1" class="float-left">
+                <img src="imagens/gatinho4.jpg" alt="Gatinho curiosidade 2" class="float-right">
+                <ul>
+                    <li>Gatinhos dormem cerca de 16 horas por dia.</li>
+                    <li>Gatos têm cinco dedos nas patas dianteiras, mas apenas quatro nas patas traseiras.</li>
+                    <li>Os gatos podem fazer cerca de 100 sons diferentes, enquanto os cães fazem apenas cerca de 10.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="contato" class="section">
+            <h2>Contato</h2>
+            <form action="/enviar-mensagem" method="post" class="contact-form">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" cols="50" required></textarea>
+                <label for="favorito">Qual seu tipo de gato favorito?</label>
+                <select id="favorito" name="favorito" required>
+                    <option value="persa">Persa</option>
+                    <option value="siames">Siamês</option>
+                    <option value="maine_coon">Maine Coon</option>
+                    <option value="sphynx">Sphynx</option>
+                </select>
+                <label>Gosta de gatinhos?</label>
+                <div class="radio-group">
+                    <input type="radio" id="gosto_sim" name="gosta_gatos" value="sim" required>
+                    <label for="gosto_sim">Sim</label>
+                    <input type="radio" id="gosto_nao" name="gosta_gatos" value="nao" required>
+                    <label for="gosto_nao">Não</label>
+                </div>
+                <label for="newsletter">Gostaria de receber nossa newsletter?</label>
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <div class="form-buttons">
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Limpar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <p>&copy; 2024 Mundo dos Gatinhos. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,15 @@
+header{
+    display: block;
+    background-image:url('flor.jpg');
+    color: yellow;
+    text-align: center;
+    position: sticky;
+}
+
+footer{
+    display: block;
+    background-image: url('flor.jpg');
+    color: yellow;
+    text-align: center;
+    
+}

@@ -1,0 +1,128 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Estilos do cabeçalho */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.nav-list li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-list li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos principais */
+.main-content {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+/* Estilos da galeria */
+.gallery {
+    display: flex;
+    justify-content: space-around;
+}
+
+.gallery-image {
+    width: 30%;
+    border-radius: 10px;
+}
+
+/* Estilos de flutuação */
+.float-container {
+    overflow: auto;
+    /* Clearfix para conter os elementos flutuantes */
+}
+
+.float-left {
+    float: left;
+    width: 45%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.float-right {
+    float: right;
+    width: 45%;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+/* Estilos do formulário de contato */
+.contact-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.radio-group {
+    margin-bottom: 10px;
+}
+
+.radio-group input {
+    margin-right: 5px;
+}
+
+.form-buttons {
+    margin-top: 10px;
+}
+
+.form-buttons button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.form-buttons button:hover {
+    background-color: #555;
+}
+
+/* Estilos do rodapé */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
