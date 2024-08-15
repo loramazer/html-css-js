@@ -45,3 +45,16 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+.apresentacao__links__link {
+   background-color: #22D4FD;
+   color: black;
+   font-family: "Montserrat", sans-serif;
+   font-weight: 600;
+   width: 270px;
+   text-align: center;
+   border-radius: 16px;
+   font-size: 24px;
+   padding: 21.5px 0;
+   text-decoration: none;
+}
