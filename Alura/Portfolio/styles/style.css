@@ -25,11 +25,7 @@ body {
 }
 
 .apresentacao__conteudo {
-        height: 482px;
-        top: 278px;
-        left: 357px;
-        gap: 0px;
-        opacity: 0px;
+        width: 615px;
 }
 
 .apresentacao__conteudo__titulo {
@@ -43,4 +39,9 @@ body {
     font-size: 24px;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
+}
+
+.apresentacao__links {
+    display: flex;
+    justify-content: space-between;
 }
