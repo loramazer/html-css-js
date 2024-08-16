@@ -89,7 +89,7 @@ body {
     color: var(--cor-secundaria);
     font-family: var(--fonte-secundaria);
     font-weight: 600;
-    width: 378px;
+    width: 50%;
     text-align: center;
     border: 2px solid var(--cor-tercearia);
     border-radius: 8px;
@@ -98,7 +98,7 @@ body {
     text-decoration: none;
 }
 
-.apresentacao__links__link:hover {
+.apresentacao__links__nav:hover {
     background-color: var(--cor-hover);
 }
 
@@ -114,4 +114,10 @@ body {
     font-family: "Montserrat", sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
+}
+
+@media (max-width: 1200px) {
+    .apresentacao{
+        flex-direction: column-reverse;
+    }
 }
