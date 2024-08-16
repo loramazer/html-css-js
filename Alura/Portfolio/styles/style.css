@@ -48,14 +48,14 @@ body {
 
 .apresentacao__conteudo {
     display: flex;
-    width: 615px;
+    width: 50%;
     flex-direction: column;
     gap: 40px;
 }
 
 .apresentacao__conteudo__titulo {
     font-size: 2.25rem;
-    font-family: var(--fonte-primaria)   
+    font-family: var(--fonte-primaria) ;  
 }
 
 .title-highlight {
@@ -64,7 +64,7 @@ body {
 
 .apresentacao__conteudo__texto {
     font-size: 1.5rem;
-    font-family: var(--fonte-secundaria)
+    font-family: var(--fonte-secundaria);
     font-weight: 400;
 }
 
@@ -77,17 +77,17 @@ body {
 }
 
 .apresentacao__links__subtitulo {
-    font-family: var(--fonte-primaria)
+    font-family: var(--fonte-primaria);
     font-weight: 400;
     font-size: 1.5rem;
 }
 
-.apresentacao__links__link {
+.apresentacao__links__nav {
     display: flex;
     justify-content: center;
     gap: 16px;
     color: var(--cor-secundaria);
-    font-family: var(--fonte-secundaria)
+    font-family: var(--fonte-secundaria);
     font-weight: 600;
     width: 378px;
     text-align: center;
@@ -100,6 +100,10 @@ body {
 
 .apresentacao__links__link:hover {
     background-color: var(--cor-hover);
+}
+
+.apresentacao__imagem {
+    width: 50%;
 }
 
 .rodape {
