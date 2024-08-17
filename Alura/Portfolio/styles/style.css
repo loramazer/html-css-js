@@ -108,7 +108,7 @@ body {
 
 .rodape {
     background-color: var(--cor-tercearia);
-    padding: 24px;
+    padding: 1.5rem;
     color: var(--cor-primaria);
     text-align: center;
     font-family: "Montserrat", sans-serif;
@@ -117,7 +117,17 @@ body {
 }
 
 @media (max-width: 1200px) {
+    .cabecalho {
+            padding: 10%;
+
+        }
+
+    .cabecalho__menu {
+        justify-content: center;
+    }
+
     .apresentacao{
         flex-direction: column-reverse;
     }
+    
 }

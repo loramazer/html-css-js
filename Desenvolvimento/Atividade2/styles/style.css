@@ -1,9 +1,78 @@
+
+@import url('https://api.fontshare.com/v2/css?f[]=chillax@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@font-face {
+    font-family: 'Steppe';
+    src: url('./fonts/SteppeTrial-Regular.woff') format('woff');
+    /* Adjust the file path and format if needed */
+}
+
+:root{
+    --cor-primaria: #ffffff;
+    --cor-secundaria: #004F44;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    box-sizing: border-box;
+    background-color: var(--cor-secundaria);
+}
+
 header{
-    display: block;
-    background-image:url('flor.jpg');
-    color: yellow;
+    display: flex;
+    flex-direction: column;
+    background-color: #F3FFFC;
+    color: black;
+    gap: 2%;
+    
+}
+
+.cabecalho__principal{
+    padding: 1% 0 0 2%;
+    font-size: 3rem;
     text-align: center;
-    position: sticky;
+}
+
+.cabecalho__navegacao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20%;
+    padding: 0;
+}
+
+.cabecalho__navegacao__link{
+    text-decoration: none;
+    color: black;
+    padding: 0 4% 4% 0;
+    font-family: "DM Sans", sans-serif;
+}
+
+.resumo{
+    background-color: var(--cor-secundaria);
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+    padding: 2%;
+
+}
+
+.resumo__titulo{
+    font-family: 'Chillax', sans-serif;
+    font-size: 2.25rem;
+    color: #EFF7F5;
+}
+
+.resumo__paragrafo{
+    font-family: 'Steppe', sans-serif;
+    font-size: 1rem;
+    color: #EFF7F5;
 }
 
 footer{
