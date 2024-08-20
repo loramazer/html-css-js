@@ -1,0 +1,116 @@
+@keyframes change-background-play-state {
+    0% {
+        background-color: blue;
+    }
+
+    100% {
+        background-color: green;
+    }
+}
+
+.play-state {
+    animation-name: change-background-play-state;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+
+@keyframes change-background-delay {
+    0% {
+        background-color: blue;
+    }
+
+    100% {
+        background-color: green;
+    }
+}
+
+.delay {
+    animation-name: change-background-delay;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+}
+
+@keyframes move-right-direction {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(200px);
+    }
+}
+
+.direction {
+    animation-name: move-right-direction;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes change-background-iteration {
+    0% {
+        background-color: blue;
+    }
+
+    100% {
+        background-color: green;
+    }
+}
+
+.iteration {
+    animation-name: change-background-iteration;
+    animation-duration: 3s;
+    animation-iteration-count: 3;
+}
+
+@keyframes change-background-duration {
+    0% {
+        background-color: blue;
+    }
+
+    100% {
+        background-color: green;
+    }
+}
+
+.duration {
+    animation-name: change-background-duration;
+    animation-duration: 5s;
+}
+
+@keyframes change-background-timing {
+    0% {
+        background-color: blue;
+    }
+
+    100% {
+        background-color: green;
+    }
+}
+
+.timing-function {
+    animation-name: change-background-timing;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes grow-fill-mode {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+.fill-mode {
+    animation-name: grow-fill-mode;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+

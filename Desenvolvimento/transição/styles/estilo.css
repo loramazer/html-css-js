@@ -1,0 +1,16 @@
+/* Estilo inicial do botão */
+.botao {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Estilo ao passar o mouse */
+.botao:hover {
+    background-color: red;
+    transform: scale(1.1);
+}

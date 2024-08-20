@@ -26,15 +26,15 @@ body{
 
 header{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: #F3FFFC;
     color: black;
-    gap: 2%;
+    gap: 50%;
     
 }
 
 .cabecalho__principal{
-    padding: 1% 0 0 2%;
+    padding: 3%;
     font-size: 3rem;
     text-align: center;
 }
@@ -52,6 +52,7 @@ header{
     color: black;
     padding: 0 4% 4% 0;
     font-family: "DM Sans", sans-serif;
+    font-size: small;
 }
 
 .resumo{

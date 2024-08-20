@@ -1,0 +1,22 @@
+/* Definindo a animação */
+@keyframes change-background {
+    0% {
+        background: blue;
+    }
+
+    50% {
+        background: orange;
+    }
+
+    100% {
+        background: green;
+    }
+}
+
+/* Estilo para o elemento que será animado */
+.animacao {
+    width: 4200px;
+    height: 1200px;
+    background: blue;
+    animation: change-background 4s infinite;
+}
