@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Hotel Exemplo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+    <!-- Header fixo com botão de voltar -->
+    <header class="fixed-header">
+        <h1 class="center-title">Quartos</h1>
+        <a href="index.html" class="btn-reservar">Voltar</a>
+    </header>
+
+    <!-- Faixa de Check-in/Check-out e número de hóspedes -->
+    <section class="reserva">
+        <div class="input-group">
+            <label for="checkin">Check-in:</label>
+            <input type="date" id="checkin">
+        </div>
+        <div class="input-group">
+            <label for="checkout">Check-out:</label>
+            <input type="date" id="checkout">
+        </div>
+        <div class="input-group">
+            <label for="hospedes">Número de Hóspedes:</label>
+            <input type="number" id="hospedes" min="1" max="5">
+        </div>
+    </section>
+
+    <!-- Seção de Quartos -->
+<section class="section-alternada">
+    <h2>Nossos Quartos</h2>
+    
+    <!-- Quarto Individual -->
+    <div class="section-content">
+        <img src="camaTomate.jpg" alt="Quarto 1">
+        <h3>Quarto Individual</h3>
+        <p>Perfeito para viagens a trabalho ou descanso, o quarto acomoda 1 hóspede em um ambiente confortável. Possui cama de solteiro, Wi-Fi gratuito, TV a cabo e uma mesa de trabalho. Tamanho: 15m².</p>
+    </div>
+    
+    <!-- Quarto Duplo -->
+    <div class="section-content">
+        <img src="camaTomate.jpg" alt="Quarto 2">
+        <h3 class="section-content__rooms">Quarto Duplo</h3>
+        <p>Ideal para casais ou amigos, esse quarto acomoda 2 hóspedes com uma cama de casal queen-size ou duas camas de solteiro. Oferece TV a cabo, ar-condicionado e vista para o jardim. Tamanho: 20m².</p>
+    </div>
+    
+    <!-- Quarto Triplo -->
+    <div class="section-content">
+        <img src="camaTomate.jpg" alt="Quarto 3">
+        <h3 class="section-content__rooms">Quarto Triplo</h3>
+        <p>Espaço extra para pequenas famílias ou grupos, o quarto acomoda até 3 hóspedes com uma cama de casal e uma cama extra. Inclui Wi-Fi, frigobar e banheiro privativo. Tamanho: 25m².</p>
+    </div>
+    
+    <!-- Quarto Familiar -->
+    <div class="section-content">
+        <img src="camaTomate.jpg" alt="Quarto 4">
+        <h3 class="section-content__rooms">Quarto Familiar</h3>
+        <p>Conforto para grupos maiores, esse quarto comporta até 4 hóspedes com duas camas de casal ou uma cama de casal e duas de solteiro. Oferece área de estar, ar-condicionado e serviço de quarto. Tamanho: 30m².</p>
+    </div>
+    
+    <!-- Suíte Master -->
+    <div class="section-content">
+        <img src="camaTomate.jpg" alt="Quarto 5">
+        <h3 class="section-content__rooms">Suíte Master</h3>
+        <p>Para grandes famílias ou grupos, a Suíte Master acomoda até 5 hóspedes, com uma cama king-size e camas adicionais sob demanda. Inclui banheira de hidromassagem, sala de estar separada e varanda privativa. Tamanho: 40m².</p>
+    </div>
+</section>
+
+
+    <!-- Contato -->
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <form>
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+    </section>
+
+    <!-- Redes sociais e endereço -->
+    <footer>
+        <p>Endereço: Rua Exemplo, 123, Cidade, País</p>
+        <a href="#">Facebook</a> | 
+        <a href="#">Instagram</a> | 
+        <a href="#">Twitter</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+

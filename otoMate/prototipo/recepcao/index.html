@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reservas Otomate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Otomate Hotel - Sistema de Reservas</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#reservas">Gerenciar Reservas</a></li>
+            <li><a href="#ocupacao">Ocupação de Quartos</a></li>
+            <li><a href="#checkin-checkout">Check-In/Check-Out</a></li>
+            <li><a href="#relatorios">Relatórios</a></li>
+        </ul>
+    </nav>
+
+    <section id="reservas" class="section-content">
+        <h2>Gerenciar Reservas</h2>
+        <form id="reserva-form">
+            <label for="nome">Nome do Hóspede:</label>
+            <input type="text" id="nome" name="nome">
+            
+            <label for="quarto">Quarto:</label>
+            <select id="quarto" name="quarto">
+                <option value="individual">Individual</option>
+                <option value="duplo">Duplo</option>
+                <option value="triplo">Triplo</option>
+                <option value="familiar">Familiar</option>
+            </select>
+
+            <label for="checkin">Data de Check-In:</label>
+            <input type="date" id="checkin" name="checkin">
+
+            <label for="checkout">Data de Check-Out:</label>
+            <input type="date" id="checkout" name="checkout">
+
+            <button type="button" onclick="fazerReserva()">Reservar</button>
+        </form>
+    </section>
+
+    <section id="ocupacao" class="section-content">
+        <h2>Ocupação de Quartos</h2>
+        <div id="ocupacao-quartos">
+            <p>Quarto Individual: <span id="ocupacao-individual">Disponível</span></p>
+            <p>Quarto Duplo: <span id="ocupacao-duplo">Disponível</span></p>
+            <p>Quarto Triplo: <span id="ocupacao-triplo">Disponível</span></p>
+            <p>Quarto Familiar: <span id="ocupacao-familiar">Disponível</span></p>
+        </div>
+    </section>
+
+    <section id="checkin-checkout" class="section-content">
+        <h2>Check-In/Check-Out</h2>
+        <form id="checkin-form">
+            <label for="checkin-nome">Nome do Hóspede:</label>
+            <input type="text" id="checkin-nome" name="checkin-nome">
+            <button type="button" onclick="checkIn()">Check-In</button>
+            <button type="button" onclick="checkOut()">Check-Out</button>
+        </form>
+    </section>
+
+    <section id="relatorios" class="section-content">
+        <h2>Relatórios e Análises</h2>
+        <button type="button" onclick="gerarRelatorio()">Gerar Relatório de Ocupação</button>
+        <div id="relatorio"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
