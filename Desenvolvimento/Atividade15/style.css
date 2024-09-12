@@ -1,0 +1,10 @@
+/* Estilo para mensagens de erro */
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+/* Estilo para campo inválido */
+.invalid {
+    border: 2px solid red;
+}

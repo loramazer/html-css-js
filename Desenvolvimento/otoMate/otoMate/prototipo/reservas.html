@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Hotel Exemplo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+    <!-- Header fixo com botão de voltar -->
+    <header class="fixed-header">
+        <h1 class="center-title">Reservas</h1>
+        <a href="index.html" class="btn-reservar">Voltar</a>
+    </header>
+
+    <!-- Faixa de Check-in/Check-out e número de hóspedes -->
+    <section class="reserva">
+        <div class="input-group">
+            <label for="checkin">Check-in:</label>
+            <input type="date" id="checkin">
+        </div>
+        <div class="input-group">
+            <label for="checkout">Check-out:</label>
+            <input type="date" id="checkout">
+        </div>
+        <div class="input-group">
+            <label for="hospedes">Número de Hóspedes:</label>
+            <input type="number" id="hospedes" min="1" max="5">
+        </div>
+    </section>
+
+    <!-- Seção de Quartos -->
+    <section class="section-alternada">
+        <h2>Nossos Quartos</h2>
+        <div class="section-content">
+            <img src="camaTomate.jpg" alt="Quarto 1">
+            <p>Quarto para até 1 hóspede, ideal para viagens individuais.</p>
+        </div>
+        <div class="section-content">
+            <img src="camaTomate.jpg" alt="Quarto 2">
+            <p>Quarto para até 2 hóspedes, perfeito para casais.</p>
+        </div>
+        <div class="section-content">
+            <img src="camaTomate.jpg" alt="Quarto 3">
+            <p>Quarto para até 3 hóspedes, espaço extra para famílias.</p>
+        </div>
+        <div class="section-content">
+            <img src="camaTomate.jpg" alt="Quarto 4">
+            <p>Quarto para até 4 hóspedes, maior conforto em grupo.</p>
+        </div>
+        <div class="section-content">
+            <img src="camaTomate.jpg" alt="Quarto 5">
+            <p>Quarto para até 5 hóspedes, ideal para famílias grandes.</p>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <form>
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+    </section>
+
+    <!-- Redes sociais e endereço -->
+    <footer>
+        <p>Endereço: Rua Exemplo, 123, Cidade, País</p>
+        <a href="#">Facebook</a> | 
+        <a href="#">Instagram</a> | 
+        <a href="#">Twitter</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
