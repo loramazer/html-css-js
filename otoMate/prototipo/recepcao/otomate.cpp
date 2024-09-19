@@ -79,7 +79,7 @@ void inicializarQuartos() {
     // Suíte master
     Quarto quarto;
     quarto.numero = 501;
-    quarto.tipo = "Suíte Master";
+    quarto.tipo = "Suite Master";
     quarto.capacidade = 5;
     quarto.preco = 300.0; // Preço exemplo
     quarto.ocupado = false;
@@ -108,7 +108,7 @@ void fazerReserva() {
     cout << "2. Duplo\n";
     cout << "3. Triplo\n";
     cout << "4. Familiar\n";
-    cout << "5. Suíte Master\n";
+    cout << "5. Suite Master\n";
     cout << "Opção: ";
     cin >> escolha;
 
@@ -127,21 +127,21 @@ void fazerReserva() {
         } else if (q.tipo == "Familiar" && escolha == 4 && !q.ocupado) {
             quarto = &q;
             break;
-        } else if (q.tipo == "Suíte Master" && escolha == 5 && !q.ocupado) {
+        } else if (q.tipo == "Suite Master" && escolha == 5 && !q.ocupado) {
             quarto = &q;
             break;
         }
     }
 
     if (quarto == nullptr) {
-        cout << "Não há quartos do tipo escolhido disponíveis.\n";
+        cout << "Nao há quartos do tipo escolhido disponiveis.\n";
         return;
     }
 
     Reserva novaReserva;
     novaReserva.numero_reserva = gerarNumeroReserva(); // Gerar o número de reserva
     novaReserva.numero_quarto = quarto->numero;
-    cout << "Digite o nome do hóspede: ";
+    cout << "Digite o nome do hospede: ";
     cin.ignore(); 
     getline(cin, novaReserva.nome_hospede);
     cout << "Digite a data de check-in (AAAA-MM-DD): ";
@@ -151,7 +151,7 @@ void fazerReserva() {
     novaReserva.cancelada = false;
     reservas.push_back(novaReserva);
     quarto->ocupado = true; 
-    cout << "Reserva realizada com sucesso! Seu número de reserva é: " << novaReserva.numero_reserva << endl;
+    cout << "Reserva realizada com sucesso! Seu numero de reserva é: " << novaReserva.numero_reserva << endl;
 
       for (Quarto& q : quartos) {
         if (q.numero == novaReserva.numero_quarto) {
@@ -164,7 +164,7 @@ void fazerReserva() {
 
 void realizarCheckin() {
     int numReserva;
-    cout << "Digite o número da reserva para realizar o check-in: ";
+    cout << "Digite o numero da reserva para realizar o check-in: ";
     cin >> numReserva;
 
     // Encontrar a reserva
@@ -201,7 +201,7 @@ void realizarCheckin() {
 
 void realizarCheckout() {
     int numReserva;
-    cout << "Digite o número da reserva para realizar o check-out: ";
+    cout << "Digite o numero da reserva para realizar o check-out: ";
     cin >> numReserva;
 
     // Encontrar a reserva
@@ -238,7 +238,7 @@ void realizarCheckout() {
 
 void cancelarReserva() {
     int numReserva;
-    cout << "Digite o número da reserva para cancelar: ";
+    cout << "Digite o numero da reserva para cancelar: ";
     cin >> numReserva;
 
     // Encontrar a reserva
@@ -251,12 +251,12 @@ void cancelarReserva() {
     }
 
     if (reserva == nullptr) {
-        cout << "Reserva não encontrada.\n";
+        cout << "Reserva nao encontrada.\n";
         return;
     }
 
     if (reserva->cancelada) {
-        cout << "Reserva já foi cancelada.\n";
+        cout << "Reserva ja foi cancelada.\n";
         return;
     }
 
@@ -277,7 +277,7 @@ void cancelarReserva() {
 
 void visualizarReserva() {
     int numReserva;
-    cout << "Digite o número da reserva para visualizar: ";
+    cout << "Digite o numero da reserva para visualizar: ";
     cin >> numReserva;
 
     // Encontrar a reserva
@@ -290,7 +290,7 @@ void visualizarReserva() {
     }
 
     if (reserva == nullptr) {
-        cout << "Reserva não encontrada.\n";
+        cout << "Reserva nao encontrada.\n";
         return;
     }
 
@@ -300,8 +300,8 @@ void visualizarReserva() {
             cout << "\n----------------------------------------\n";
             cout << "  Dados da Reserva:\n";
             cout << "----------------------------------------\n";
-            cout << "Número da Reserva: " << reserva->numero_reserva << endl;
-            cout << "Nome do Hóspede: " << reserva->nome_hospede << endl;
+            cout << "Numero da Reserva: " << reserva->numero_reserva << endl;
+            cout << "Nome do Hospede: " << reserva->nome_hospede << endl;
             cout << "Quarto: " << reserva->numero_quarto << endl;
             cout << "Tipo de Quarto: " << q.tipo << endl; 
             cout << "Capacidade: " << q.capacidade << endl; 
@@ -316,7 +316,7 @@ void visualizarReserva() {
 
 void visualizarOcupacao() {
     cout << "\n----------------------------------------\n";
-    cout << "  Ocupação dos Quartos:\n";
+    cout << "  Ocupacao dos Quartos:\n";
     cout << "----------------------------------------\n";
     for (const Quarto& quarto : quartos) {
         cout << "Quarto " << quarto.numero << ": " << quarto.status;
@@ -344,9 +344,9 @@ int main() {
         cout << "3. Realizar Check-out\n";
         cout << "4. Cancelar Reserva\n";
         cout << "5. Visualizar Reserva\n";
-        cout << "6. Visualizar Ocupação\n";
+        cout << "6. Visualizar Ocupao\n";
         cout << "0. Sair\n";
-        cout << "Opção: ";
+        cout << "Opcao: ";
         cin >> opcao;
 
         switch (opcao) {
@@ -372,7 +372,7 @@ int main() {
                 cout << "Saindo do sistema...\n";
                 break;
             default:
-                cout << "Opção inválida!\n";
+                cout << "Opcao invalida!\n";
         }
 
         // Salvar dados dos quartos e reservas em arquivo

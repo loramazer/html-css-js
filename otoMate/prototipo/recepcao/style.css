@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: red;
     color: white;
     padding: 1rem;
     text-align: center;
@@ -68,13 +68,13 @@ button {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: red;
     color: white;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: red;
 }
 
 #relatorio {
