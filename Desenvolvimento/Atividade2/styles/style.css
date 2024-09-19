@@ -3,6 +3,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @font-face {
     font-family: 'Steppe';
     src: url('./fonts/SteppeTrial-Regular.woff') format('woff');
@@ -12,6 +14,8 @@
 :root{
     --cor-primaria: #ffffff;
     --cor-secundaria: #004F44;
+    --cor-terciaria: #F3fffc;
+    --hoover-preto: gray;
 }
 
 * {
@@ -21,47 +25,58 @@
 
 body{
     box-sizing: border-box;
-    background-color: var(--cor-secundaria);
-}
-
-header{
-    display: flex;
-    flex-direction: row;
-    background-color: #F3FFFC;
-    color: black;
-    gap: 50%;
     
 }
 
-.cabecalho__principal{
-    font-family: ;
-    padding: 3%;
-    font-size: 3rem;
-    text-align: center;
-}
-
-.cabecalho__navegacao{
+header {
     display: flex;
+    justify-content: space-between;
+    /* Distribui o conteúdo do header nas extremidades */
     align-items: center;
-    justify-content: center;
-    gap: 20%;
-    padding: 0;
+    /* Centraliza verticalmente */
+    background-color: var(--cor-terciaria);
+    padding: 2% 5%;
+    /* Espaçamento interno nas laterais */
+    color: black;
 }
 
-.cabecalho__navegacao__link{
-    text-decoration: none;
-    color: black;
-    padding: 0 4% 4% 0;
-    font-family: "DM Sans", sans-serif;
-    font-size: small;
+.cabecalho__principal {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 3rem;
+    margin: 0;
+    /* Remove margens extras */
 }
+
+.cabecalho__navegacao {
+    display: flex;
+    gap: 20px;
+    /* Define um espaço fixo entre os links */
+    align-items: center;
+    /* Alinha os links verticalmente ao centro */
+}
+
+.cabecalho__navegacao__link {
+    text-decoration: none;
+    white-space: nowrap;
+    /* Impede que os textos quebrem de linha */
+    color: black;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1rem;
+    margin: 0 15px;
+    /* Espaçamento entre os links */
+    padding-bottom: 4%;
+    /* Um pequeno ajuste no espaçamento inferior */
+}
+
 
 .resumo{
     background-color: var(--cor-secundaria);
     display: flex;
     flex-direction: column;
     align-items:start;
-    padding: 2%;
+    padding: 15%;
 
 }
 
@@ -77,10 +92,20 @@ header{
     color: #EFF7F5;
 }
 
+.resumo__links{
+    display: flex;
+}
+
+.resumo__links__botao{
+    font-family: "DM Sans", sans-serif;
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--cor-secundaria);
+    border: 15px solid var(--cor-primaria);
+    background-color: var(--cor-primaria);
+}
+
 footer{
-    display: block;
-    background-image: url('flor.jpg');
-    color: yellow;
-    text-align: center;
+    
     
 }
