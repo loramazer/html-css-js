@@ -1,3 +1,5 @@
+let hospedes = [];
+
 document.getElementById('formulario').addEventListener('submit', function(event){
     event.preventDefault();//Evita o envio padrão do formulario
     //Captura de dados do formulário
@@ -6,20 +8,37 @@ document.getElementById('formulario').addEventListener('submit', function(event)
     const qtd_noites = document.getElementById('qtd_noites').value;
     //Cria objeto com dados
     const hospede = {
-        nome: nome,
-        endereco: endereco,
-        qtd_noites: qtd_noites
+         nome,
+         endereco,
+         qtd_noites
 };
 
-hospedes.push();
+hospedes.push(hospede);
 adicionarNaTabela(hospede);
 
 document.getElementById('form').reset();
+});
 
 function adicionarNaTabela (hospede){
     const tbody = document.querySelector('#tabelaHospedes tbody');
     const tr = document.createElement('tr');
+     tr.innerHTML = `
+        <td>${hospede.nome}</td>
+        <td>${hospede.endereco}</td>
+        <td>${hospede.qtd_noites}</td>
+    `;
+    tbody.appendChild(tr);
 }
-    //Converte objeto para JSON
-    const dados_json = JSON.stringify(dados);
-}
+
+document.getElementById(`download`).addEventListener(`click`, function(){
+    const jsonDados = JSON.stringify(hospedes, null, 2);
+    const blob = new Blob([jsonDados], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'dados.json';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});
+
