@@ -31,14 +31,14 @@ function adicionarNaTabela (hospede){
 }
 
 document.getElementById(`download`).addEventListener(`click`, function(){
-    const jsonDados = JSON.stringify(hospedes, null, 2);
-    const blob = new Blob([jsonDados], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
+    const jsonDados = JSON.stringify(hospedes, null, 2); //converte objetos para json
+    const blob = new Blob([jsonDados], { type: 'application/json' }); //cria um arquivo json
+    const url = URL.createObjectURL(blob); //cria link para download
     const link = document.createElement('a');
     link.href = url;
     link.download = 'dados.json';
     document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    link.click(); // clica no link
+    document.body.removeChild(link); // remove link
 });
 
