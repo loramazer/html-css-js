@@ -1,0 +1,19 @@
+{
+"usuarios": [
+{
+"nome": "Lucas",
+"idade": 30,
+"cidade": "Curitiba"
+},
+{
+"nome": "Mariana",
+"idade": 22,
+"cidade": "São Paulo"
+},
+{
+"nome": "Rafael",
+"idade": 26,
+"cidade": "Belo Horizonte"
+}
+]
+}

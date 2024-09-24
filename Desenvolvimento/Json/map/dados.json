@@ -1,0 +1,17 @@
+[
+{
+"nome": "João Silva",
+"RA": "12345",
+"curso": "Engenharia"
+},
+{
+"nome": "Maria Souza",
+"RA": "67890",
+"curso": "Direito"
+},
+{
+"nome": "Carlos Pereira",
+"RA": "11223",
+"curso": "Medicina"
+}
+]

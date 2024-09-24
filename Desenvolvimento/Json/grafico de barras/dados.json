@@ -1,0 +1,24 @@
+{
+"vendas": [
+{
+"mes": "Janeiro",
+"quantidade": 30
+},
+{
+"mes": "Fevereiro",
+"quantidade": 50
+},
+{
+"mes": "Março",
+"quantidade": 40
+},
+{
+"mes": "Abril",
+"quantidade": 60
+},
+{
+"mes": "Maio",
+"quantidade": 70
+}
+]
+}
