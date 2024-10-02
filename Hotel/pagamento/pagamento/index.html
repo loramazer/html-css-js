@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processo de Pagamento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Módulo de Endereço de Compra -->
+        <div class="module">
+            <h2>Endereço de Compra</h2>
+            <div class="module-content">
+                <input type="checkbox" id="newAddress">
+                <label for="newAddress">Adicionar novo endereço</label>
+                <form>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome">
+                    
+                    <label for="sobrenome">Sobrenome:</label>
+                    <input type="text" id="sobrenome" placeholder="Digite seu sobrenome">
+                    
+                    <label for="rua">Rua:</label>
+                    <input type="text" id="rua" placeholder="Digite sua rua">
+                    
+                    <label for="numero">Número:</label>
+                    <input type="text" id="numero" placeholder="Digite o número">
+                    
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="estado" placeholder="Digite seu estado">
+                    
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" placeholder="Digite seu CEP">
+                    
+                    <div class="buttons">
+                        <button type="button" class="cancel-btn">Cancelar</button>
+                        <button type="submit" class="save-btn">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Módulo de Confirmação -->
+        <div class="module confirmation">
+            <button class="confirm-btn">Confirmar checkout</button>
+            <p class="small-text">Ao realizar seu pedido, você concorda com nossa Política de Privacidade e Termos de Uso.</p>
+            <hr>
+            <h3>Resumo da Estadia</h3>
+            <ul>
+                <li>Quarto de solteiro <span class="price">R$ 200</span></li>
+                <li>Serviço de quarto <span class="price">R$ 50</span></li>
+                <li>Taxa de serviço <span class="price">R$ 30</span></li>
+            </ul>
+            <hr>
+            <div class="total">
+                <span>Total: </span><span class="price">R$ 280</span>
+            </div>
+        </div>
+
+        <!-- Módulo de Método de Pagamento -->
+        <div class="module">
+            <h2>Método de Pagamento</h2>
+            <div class="module-content">
+                <input type="checkbox" id="paymentMethod">
+                <label for="paymentMethod">Cartão de Crédito ou Débito</label>
+                <form>
+                    <label for="nomeCartao">Nome do titular do cartão:</label>
+                    <input type="text" id="nomeCartao" placeholder="Nome no cartão">
+                    
+                    <label for="numeroCartao">Número do cartão:</label>
+                    <input type="text" id="numeroCartao" placeholder="Número do cartão">
+                    
+                    <label for="validade">Data de vencimento:</label>
+                    <input type="text" id="validade" placeholder="MM/AA">
+                    
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" placeholder="CVV">
+                    
+                    <!-- Dentro do módulo de Método de Pagamento -->
+<form>
+    <!-- Outros campos do formulário -->
+
+    <div class="checkbox-group">
+        <input type="checkbox" id="saveCard">
+        <label for="saveCard">Salvar este cartão para uso futuro</label>
+    </div>
+
+    <div class="checkbox-group">
+        <input type="checkbox" id="sameBillingAddress">
+        <label for="sameBillingAddress">Usar o mesmo endereço de cobrança</label>
+    </div>
+
+    <!-- Restante do formulário -->
+</form>
+
+                    
+                    <label for="billingAddress">Endereço:</label>
+                    <input type="text" id="billingAddress" placeholder="Digite seu endereço">
+                    
+                    <label for="billingNumber">Número:</label>
+                    <input type="text" id="billingNumber" placeholder="Digite o número">
+                    
+                    <label for="billingState">Estado:</label>
+                    <input type="text" id="billingState" placeholder="Digite seu estado">
+                    
+                    <label for="billingCep">CEP:</label>
+                    <input type="text" id="billingCep" placeholder="Digite seu CEP">
+                    
+                    <div class="buttons">
+                        <button type="button" class="cancel-btn">Cancelar</button>
+                        <button type="submit" class="save-btn">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

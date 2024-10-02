@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-In</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .container { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); width: 400px; }
+        h2 { text-align: center; }
+        label { display: block; margin-top: 10px; }
+        input, select { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ddd; border-radius: 5px; }
+        button { width: 100%; padding: 10px; margin-top: 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <script src="script.js"></script>
+    <div class="container">
+        <h2>Check-In</h2>
+        <form action="checkout.html">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" required placeholder="Digite seu nome completo">
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" required placeholder="Digite seu email">
+
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" required placeholder="Digite seu CPF">
+
+            <label for="dataCheckin">Data de Check-In</label>
+            <input type="date" id="dataCheckin" required>
+
+            <label for="horaCheckin">Hora de Check-In</label>
+            <input type="time" id="horaCheckin" required>
+
+            <label for="tipoQuarto">Tipo de Quarto</label>
+            <select id="tipoQuarto" required>
+                <option value="solteiro">Quarto de Solteiro</option>
+                <option value="casal">Quarto de Casal</option>
+                <option value="familia">Quarto Família</option>
+            </select>
+
+            <button type="submit">Próximo - Check-Out</button>
+        </form>
+    </div>
+</body>
+</html>
