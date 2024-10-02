@@ -15,9 +15,9 @@ const pool = mysql.createPool({
     queueLimit: 0
 });
 
-// Middleware
-app.use(bodyParser.json());
-app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 
 // Rota para cadastrar cliente
 app.post('/cadastrarCliente', (req, res) => {

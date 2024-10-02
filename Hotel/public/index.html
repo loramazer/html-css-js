@@ -17,33 +17,36 @@
 <body>
     <div class="container">
         <h2>Cadastro</h2>
-        <form>
-            <label for="nome">Nome Completo</label>
-            <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+       <form id="cadastroCliente" action="/cadastrarCliente" method="POST">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required><br>
 
-            <label for="cpf">CPF</label>
-            <input type="text" id="cpf" placeholder="Digite seu CPF" maxlength="11" required>
+    <label for="cpf">CPF:</label>
+    <input type="text" id="cpf" name="cpf" required><br>
 
-            <label for="telefone">Telefone</label>
-            <input type="text" id="telefone" placeholder="Digite seu telefone (somente números)" maxlength="11" required>
+        <label for="rg">RG:</label>
+        <input type="text" id="rg" name="rg"><br>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Digite seu email" required>
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco"><br>
 
-            <label for="endereco">Endereço</label>
-            <input type="text" id="endereco" placeholder="Digite seu endereço" required>
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone"><br>
 
-            <label for="dataNascimento">Data de Nascimento</label>
-            <input type="text" id="dataNascimento" placeholder="DD/MM/AAAA" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
 
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" placeholder="Digite sua senha" required>
+        <label for="preferencias">Preferências:</label>
+        <textarea id="preferencias" name="preferencias"></textarea><br>
 
-            <label for="confirmaSenha">Confirmação de Senha</label>
-            <input type="password" id="confirmaSenha" placeholder="Confirme sua senha" required>
+        <label for="pontos_fidelidade">Pontos de Fidelidade:</label>
+        <input type="number" id="pontos_fidelidade" name="pontos_fidelidade"><br>
 
-            <button type="submit">Concluir</button>
-        </form>
+        <label for="data_nascimento">Data de Nascimento:</label>
+    <input type="date" id="data_nascimento" name="data_nascimento" required><br>
+
+    <input type="submit" value="Cadastrar Cliente">
+</form>
     </div>
     <script src="script.js"></script>
 </body>
