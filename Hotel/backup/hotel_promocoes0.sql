@@ -16,37 +16,35 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `clientes`
+-- Table structure for table `promocoes`
 --
 
-DROP TABLE IF EXISTS `clientes`;
+DROP TABLE IF EXISTS `promocoes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `clientes` (
-  `cliente_id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) NOT NULL,
-  `cpf` varchar(14) NOT NULL,
-  `rg` varchar(12) DEFAULT NULL,
-  `endereco` varchar(255) DEFAULT NULL,
-  `telefone` varchar(15) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `preferencias` text,
-  `pontos_fidelidade` int DEFAULT '0',
+CREATE TABLE `promocoes` (
+  `promocao_id` int NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(255) NOT NULL,
+  `data_inicio` date NOT NULL,
+  `data_fim` date NOT NULL,
+  `percentual_desconto` decimal(5,2) NOT NULL,
+  `tipo_quarto` varchar(50) NOT NULL,
   `criado_em` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `atualizado_em` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `data_nascimento` date NOT NULL,
-  PRIMARY KEY (`cliente_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `status` varchar(20) NOT NULL,
+  `uso_maximo` int DEFAULT NULL,
+  PRIMARY KEY (`promocao_id`),
+  KEY `tipo_quarto` (`tipo_quarto`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `clientes`
+-- Dumping data for table `promocoes`
 --
 
-LOCK TABLES `clientes` WRITE;
-/*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (6,'Mel Amaral Luz','493.004.240-25','39.514.972-1','Rua Souza Caldas, 208','42991415248','renanbolsonaro@gmail.com',NULL,0,'2024-10-07 16:50:45','2024-10-07 16:50:45','1995-02-03'),(7,'Mel Amaral Luz','493.004.240-25','39.514.972-1','Rua Souza Caldas, 208','42991415248','renanbolsonaro@gmail.com',NULL,0,'2024-10-07 16:54:09','2024-10-07 16:54:09','1999-07-27'),(8,'Mel Amaral Luz','493.004.240-25','39.514.972-1','Rua Souza Caldas, 208','42991415248','renanbolsonaro@gmail.com',NULL,0,'2024-10-07 16:55:44','2024-10-07 16:55:44','1999-07-07');
-/*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
+LOCK TABLES `promocoes` WRITE;
+/*!40000 ALTER TABLE `promocoes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `promocoes` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -58,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-07 17:14:34
+-- Dump completed on 2024-10-09 16:22:23

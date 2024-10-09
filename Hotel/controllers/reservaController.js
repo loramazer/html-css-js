@@ -1,22 +1,41 @@
-// controllers/reservaController.js
-const db = require('../config/db');
+const Reserva = require('../models/reserva');
 
-// Função para realizar uma reserva
-exports.reservarQuarto = (req, res) => {
-    const { quarto_id, data_checkin, data_checkout } = req.body;
-    const cliente_id = req.session.usuarioId;  // Obtém o ID do cliente da sessão
+// Consulta disponibilidade de quartos
+exports.consultarDisponibilidade = async (req, res) => {
+  const { checkin, checkout, categoria } = req.query;
 
-    if (!quarto_id || !data_checkin || !data_checkout) {
-        return res.status(400).send('Todos os campos são obrigatórios.');
+  try {
+    const disponiveis = await Reserva.verificarDisponibilidade(checkin, checkout, categoria);
+    if (disponiveis.length > 0) {
+      res.json(disponiveis);
+    } else {
+      res.status(404).json({ message: 'Nenhum quarto disponível para as datas escolhidas.' });
     }
+  } catch (error) {
+    res.status(500).json({ message: 'Erro ao consultar disponibilidade.', error });
+  }
+};
 
-    const sql = `
-        INSERT INTO Reservas (cliente_id, quarto_id, data_checkin, data_checkout)
-        VALUES (?, ?, ?, ?)`;
+// Realizar reserva
+exports.fazerReserva = async (req, res) => {
+  const reservaData = req.body;
 
-    db.query(sql, [cliente_id, quarto_id, data_checkin, data_checkout], (err, result) => {
-        if (err) throw err;
+  try {
+    const reservaId = await Reserva.realizarReserva(reservaData);
+    res.json({ message: 'Reserva realizada com sucesso!', reservaId });
+  } catch (error) {
+    res.status(500).json({ message: 'Erro ao realizar a reserva.', error });
+  }
+};
 
-        res.send('Reserva realizada com sucesso!');
-    });
+// Aplicar pacote promocional
+exports.aplicarPacote = async (req, res) => {
+  const { pacote, checkin, checkout } = req.body;
+
+  try {
+    const desconto = await Reserva.aplicarPacotePromocional(pacote, checkin, checkout);
+    res.json({ desconto });
+  } catch (error) {
+    res.status(500).json({ message: 'Erro ao aplicar o pacote promocional.', error });
+  }
 };

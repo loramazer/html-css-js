@@ -16,36 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `pagamentos`
+-- Table structure for table `historicohospedagem`
 --
 
-DROP TABLE IF EXISTS `pagamentos`;
+DROP TABLE IF EXISTS `historicohospedagem`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `pagamentos` (
-  `pagamento_id` int NOT NULL AUTO_INCREMENT,
-  `checkout_id` int NOT NULL,
-  `valor` decimal(10,2) NOT NULL,
-  `data_pagamento` datetime NOT NULL,
-  `metodo_pagamento` varchar(20) NOT NULL,
-  `transacao_id` varchar(50) DEFAULT NULL,
-  `criado_em` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `atualizado_em` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` varchar(20) NOT NULL,
-  `notas` text,
-  PRIMARY KEY (`pagamento_id`),
-  KEY `checkout_id` (`checkout_id`),
-  CONSTRAINT `pagamentos_ibfk_1` FOREIGN KEY (`checkout_id`) REFERENCES `checkouts` (`checkout_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `historicohospedagem` (
+  `historico_id` int NOT NULL AUTO_INCREMENT,
+  `cliente_id` int DEFAULT NULL,
+  `data_checkin` date DEFAULT NULL,
+  `data_checkout` date DEFAULT NULL,
+  `quarto_id` int DEFAULT NULL,
+  PRIMARY KEY (`historico_id`),
+  KEY `cliente_id` (`cliente_id`),
+  CONSTRAINT `historicohospedagem_ibfk_1` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`cliente_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `pagamentos`
+-- Dumping data for table `historicohospedagem`
 --
 
-LOCK TABLES `pagamentos` WRITE;
-/*!40000 ALTER TABLE `pagamentos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pagamentos` ENABLE KEYS */;
+LOCK TABLES `historicohospedagem` WRITE;
+/*!40000 ALTER TABLE `historicohospedagem` DISABLE KEYS */;
+/*!40000 ALTER TABLE `historicohospedagem` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-07 17:14:33
+-- Dump completed on 2024-10-09 16:22:23

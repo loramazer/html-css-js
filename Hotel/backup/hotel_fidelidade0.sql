@@ -16,36 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `promocoes`
+-- Table structure for table `fidelidade`
 --
 
-DROP TABLE IF EXISTS `promocoes`;
+DROP TABLE IF EXISTS `fidelidade`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `promocoes` (
-  `promocao_id` int NOT NULL AUTO_INCREMENT,
-  `descricao` varchar(255) NOT NULL,
-  `data_inicio` date NOT NULL,
-  `data_fim` date NOT NULL,
-  `percentual_desconto` decimal(5,2) NOT NULL,
-  `tipo_quarto` varchar(50) NOT NULL,
-  `criado_em` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `atualizado_em` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` varchar(20) NOT NULL,
-  `uso_maximo` int DEFAULT NULL,
-  PRIMARY KEY (`promocao_id`),
-  KEY `tipo_quarto` (`tipo_quarto`),
-  CONSTRAINT `promocoes_ibfk_1` FOREIGN KEY (`tipo_quarto`) REFERENCES `quartos` (`tipo_quarto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `fidelidade` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cliente_id` int NOT NULL,
+  `pontos` int DEFAULT '0',
+  `data_criacao` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `cliente_id` (`cliente_id`),
+  CONSTRAINT `fidelidade_ibfk_1` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`cliente_id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `promocoes`
+-- Dumping data for table `fidelidade`
 --
 
-LOCK TABLES `promocoes` WRITE;
-/*!40000 ALTER TABLE `promocoes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `promocoes` ENABLE KEYS */;
+LOCK TABLES `fidelidade` WRITE;
+/*!40000 ALTER TABLE `fidelidade` DISABLE KEYS */;
+/*!40000 ALTER TABLE `fidelidade` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-07 17:14:34
+-- Dump completed on 2024-10-09 16:22:23

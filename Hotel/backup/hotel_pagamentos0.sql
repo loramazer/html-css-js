@@ -16,34 +16,36 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `quartos`
+-- Table structure for table `pagamentos`
 --
 
-DROP TABLE IF EXISTS `quartos`;
+DROP TABLE IF EXISTS `pagamentos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `quartos` (
-  `quarto_id` int NOT NULL AUTO_INCREMENT,
-  `numero_quarto` int NOT NULL DEFAULT '10',
-  `tipo_quarto` varchar(50) NOT NULL,
-  `capacidade` int NOT NULL,
-  `preco_por_noite` decimal(10,2) NOT NULL,
-  `status_disponibilidade` tinyint(1) NOT NULL,
-  `descricao` text,
+CREATE TABLE `pagamentos` (
+  `pagamento_id` int NOT NULL AUTO_INCREMENT,
+  `checkout_id` int NOT NULL,
+  `valor` decimal(10,2) NOT NULL,
+  `data_pagamento` datetime NOT NULL,
+  `metodo_pagamento` varchar(20) NOT NULL,
+  `transacao_id` varchar(50) DEFAULT NULL,
   `criado_em` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `atualizado_em` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`quarto_id`),
-  UNIQUE KEY `tipo_quarto` (`tipo_quarto`)
+  `status` varchar(20) NOT NULL,
+  `notas` text,
+  PRIMARY KEY (`pagamento_id`),
+  KEY `checkout_id` (`checkout_id`),
+  CONSTRAINT `pagamentos_ibfk_1` FOREIGN KEY (`checkout_id`) REFERENCES `checkouts` (`checkout_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `quartos`
+-- Dumping data for table `pagamentos`
 --
 
-LOCK TABLES `quartos` WRITE;
-/*!40000 ALTER TABLE `quartos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `quartos` ENABLE KEYS */;
+LOCK TABLES `pagamentos` WRITE;
+/*!40000 ALTER TABLE `pagamentos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pagamentos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -55,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-07 17:14:33
+-- Dump completed on 2024-10-09 16:22:23

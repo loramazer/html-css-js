@@ -2,7 +2,7 @@ const db = require('../config/db');
 const bcrypt = require('bcrypt');
 
 // Função para cadastrar cliente
-exports.cadastrarCliente = async (req, res) => {
+exports.cadastrar = async (req, res) => {
     const { nome, cpf, rg, endereco, telefone, email, data_nascimento, senha } = req.body;
 
     if (!nome || !cpf || !telefone || !email || !senha) {

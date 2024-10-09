@@ -16,38 +16,36 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `feedbacks`
+-- Table structure for table `funcionarios`
 --
 
-DROP TABLE IF EXISTS `feedbacks`;
+DROP TABLE IF EXISTS `funcionarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `feedbacks` (
-  `feedback_id` int NOT NULL AUTO_INCREMENT,
-  `cliente_id` int NOT NULL,
-  `checkout_id` int NOT NULL,
-  `avaliacao` int NOT NULL,
-  `comentarios` text,
-  `criado_em` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `atualizado_em` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` varchar(20) NOT NULL,
-  `resposta` text,
-  `data_resposta` datetime DEFAULT NULL,
-  PRIMARY KEY (`feedback_id`),
-  KEY `cliente_id` (`cliente_id`),
-  KEY `checkout_id` (`checkout_id`),
-  CONSTRAINT `feedbacks_ibfk_1` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`cliente_id`),
-  CONSTRAINT `feedbacks_ibfk_2` FOREIGN KEY (`checkout_id`) REFERENCES `checkouts` (`checkout_id`)
+CREATE TABLE `funcionarios` (
+  `funcionario_id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  `cpf` varchar(14) NOT NULL,
+  `rg` varchar(12) DEFAULT NULL,
+  `endereco` varchar(255) DEFAULT NULL,
+  `telefone` varchar(15) DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `cargo` varchar(50) NOT NULL,
+  `data_admissao` datetime DEFAULT CURRENT_TIMESTAMP,
+  `senha` varchar(255) NOT NULL,
+  PRIMARY KEY (`funcionario_id`),
+  UNIQUE KEY `cpf` (`cpf`),
+  UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `feedbacks`
+-- Dumping data for table `funcionarios`
 --
 
-LOCK TABLES `feedbacks` WRITE;
-/*!40000 ALTER TABLE `feedbacks` DISABLE KEYS */;
-/*!40000 ALTER TABLE `feedbacks` ENABLE KEYS */;
+LOCK TABLES `funcionarios` WRITE;
+/*!40000 ALTER TABLE `funcionarios` DISABLE KEYS */;
+/*!40000 ALTER TABLE `funcionarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -59,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-07 17:14:34
+-- Dump completed on 2024-10-09 16:22:23

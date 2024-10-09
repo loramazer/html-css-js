@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste de Reservas</title>
+</head>
+<body>
+  <h1>Teste de Reservas - Hotel</h1>
+
+  <!-- Verificar disponibilidade -->
+  <h2>Consulta de Disponibilidade</h2>
+  <form id="form-disponibilidade">
+    <label for="checkin">Check-in:</label>
+    <input type="date" id="checkin" name="checkin" required>
+    
+    <label for="checkout">Check-out:</label>
+    <input type="date" id="checkout" name="checkout" required>
+
+    <label for="categoria">Categoria do Quarto:</label>
+    <input type="text" id="categoria" name="categoria" required>
+
+    <button type="submit">Consultar Disponibilidade</button>
+  </form>
+
+  <div id="resultado-disponibilidade"></div>
+
+  <hr>
+
+  <!-- Fazer reserva -->
+  <h2>Fazer Reserva</h2>
+  <form id="form-reserva">
+    <label for="clienteId">ID do Cliente:</label>
+    <input type="number" id="clienteId" name="clienteId" required>
+
+    <label for="quartoId">ID do Quarto:</label>
+    <input type="number" id="quartoId" name="quartoId" required>
+
+    <label for="checkinReserva">Check-in:</label>
+    <input type="date" id="checkinReserva" name="checkinReserva" required>
+
+    <label for="checkoutReserva">Check-out:</label>
+    <input type="date" id="checkoutReserva" name="checkoutReserva" required>
+
+    <label for="precoTotal">Preço Total:</label>
+    <input type="number" id="precoTotal" name="precoTotal" required>
+
+    <button type="submit">Fazer Reserva</button>
+  </form>
+
+  <div id="resultado-reserva"></div>
+
+  <hr>
+
+  <!-- Aplicar Pacote Promocional -->
+  <h2>Aplicar Pacote Promocional</h2>
+  <form id="form-pacote">
+    <label for="pacote">Nome do Pacote:</label>
+    <input type="text" id="pacote" name="pacote" required>
+
+    <label for="checkinPacote">Check-in:</label>
+    <input type="date" id="checkinPacote" name="checkinPacote" required>
+
+    <label for="checkoutPacote">Check-out:</label>
+    <input type="date" id="checkoutPacote" name="checkoutPacote" required>
+
+    <button type="submit">Aplicar Pacote</button>
+  </form>
+
+  <div id="resultado-pacote"></div>
+
+  <script>
+    // Consulta de Disponibilidade
+    document.getElementById('form-disponibilidade').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const checkin = document.getElementById('checkin').value;
+      const checkout = document.getElementById('checkout').value;
+      const categoria = document.getElementById('categoria').value;
+
+      fetch(`/reservas/disponibilidade?checkin=${checkin}&checkout=${checkout}&categoria=${categoria}`)
+        .then(response => response.json())
+        .then(data => {
+          const resultado = document.getElementById('resultado-disponibilidade');
+          resultado.innerHTML = data.length > 0 ? JSON.stringify(data) : 'Nenhum quarto disponível.';
+        })
+        .catch(error => {
+          console.error('Erro:', error);
+        });
+    });
+
+    // Fazer Reserva
+    document.getElementById('form-reserva').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const reservaData = {
+        cliente_id: document.getElementById('clienteId').value,
+        quarto_id: document.getElementById('quartoId').value,
+        checkin: document.getElementById('checkinReserva').value,
+        checkout: document.getElementById('checkoutReserva').value,
+        preco_total: document.getElementById('precoTotal').value
+      };
+
+      fetch('/reservas/fazer-reserva', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(reservaData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('resultado-reserva').innerText = data.message;
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+      });
+    });
+
+    // Aplicar Pacote Promocional
+    document.getElementById('form-pacote').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const pacoteData = {
+        pacote: document.getElementById('pacote').value,
+        checkin: document.getElementById('checkinPacote').value,
+        checkout: document.getElementById('checkoutPacote').value
+      };
+
+      fetch('/reservas/aplicar-pacote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(pacoteData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('resultado-pacote').innerText = `Desconto aplicado: ${data.desconto}%`;
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -16,36 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `checkouts`
+-- Table structure for table `tipos_quarto`
 --
 
-DROP TABLE IF EXISTS `checkouts`;
+DROP TABLE IF EXISTS `tipos_quarto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `checkouts` (
-  `checkout_id` int NOT NULL AUTO_INCREMENT,
-  `checkin_id` int NOT NULL,
-  `valor_total_devido` decimal(10,2) NOT NULL,
-  `data_checkout` datetime NOT NULL,
-  `metodo_pagamento` varchar(20) NOT NULL,
-  `email_recibo` varchar(100) NOT NULL,
-  `feedback` text,
-  `criado_em` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `atualizado_em` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` varchar(20) NOT NULL,
-  PRIMARY KEY (`checkout_id`),
-  KEY `checkin_id` (`checkin_id`),
-  CONSTRAINT `checkouts_ibfk_1` FOREIGN KEY (`checkin_id`) REFERENCES `checkins` (`checkin_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `tipos_quarto` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `descricao` (`descricao`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `checkouts`
+-- Dumping data for table `tipos_quarto`
 --
 
-LOCK TABLES `checkouts` WRITE;
-/*!40000 ALTER TABLE `checkouts` DISABLE KEYS */;
-/*!40000 ALTER TABLE `checkouts` ENABLE KEYS */;
+LOCK TABLES `tipos_quarto` WRITE;
+/*!40000 ALTER TABLE `tipos_quarto` DISABLE KEYS */;
+INSERT INTO `tipos_quarto` VALUES (2,'Duplo'),(4,'Familiar'),(1,'Individual'),(5,'Suíte'),(3,'Triplo');
+/*!40000 ALTER TABLE `tipos_quarto` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-07 17:14:34
+-- Dump completed on 2024-10-09 16:22:24

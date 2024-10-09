@@ -35,7 +35,7 @@ CREATE TABLE `usuarios` (
   KEY `funcionario_id` (`funcionario_id`),
   CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`cliente_id`) ON DELETE SET NULL,
   CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`funcionario_id`) REFERENCES `funcionarios` (`funcionario_id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,8,NULL,'$2b$10$GU4S4ipJVRQaHiYg.CrQq..XTGlBd1498XHsRj4IlIpCS63YYoFGu','cliente','renanbolsonaro@gmail.com');
+INSERT INTO `usuarios` VALUES (1,8,NULL,'$2b$10$GU4S4ipJVRQaHiYg.CrQq..XTGlBd1498XHsRj4IlIpCS63YYoFGu','cliente','renanbolsonaro@gmail.com'),(2,9,NULL,'$2b$10$SHse9Bti.xiUyDsDa9VWaOHle.Rs5xnmFn4zHzMwMqHO28v3/6zWS','cliente','lauratopoma@gmail.com');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-07 17:14:34
+-- Dump completed on 2024-10-09 16:22:23
